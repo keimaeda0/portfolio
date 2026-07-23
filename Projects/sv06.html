@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Sovol SV06 Klipper conversion and 3D-printer systems integration by Kei Maeda."
+  />
+  <title>SV06 Systems Integration | Kei Maeda</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="logo" href="../index.html">KM</a>
+
+    <nav aria-label="Main navigation">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <a class="back-link" href="../index.html#projects">← Back to projects</a>
+
+      <p class="eyebrow">03 — ADDITIVE MANUFACTURING</p>
+      <h1>SV06 Printer Systems Integration</h1>
+
+      <p class="hero-text">
+        Converted a Sovol SV06 from stock Marlin firmware into a
+        Klipper-based prototyping system hosted on a Raspberry Pi 400.
+      </p>
+
+      <div class="tags project-hero-tags">
+        <span>Klipper</span>
+        <span>Raspberry Pi</span>
+        <span>Linux</span>
+        <span>Mainsail</span>
+        <span>Moonraker</span>
+      </div>
+    </section>
+
+    <section class="project-content">
+      <div class="project-intro">
+        <div>
+          <h2>Overview</h2>
+          <p>
+            [Placeholder — describe the project background here: why you
+            wanted a more configurable 3D-printing workflow and what
+            problem the stock firmware presented.]
+          </p>
+        </div>
+
+        <div>
+          <h2>My Contribution</h2>
+          <p>
+            [Placeholder — describe what you personally did: migrating to
+            Klipper, configuring the Raspberry Pi and web stack, and what
+            changed as a result.]
+          </p>
+        </div>
+      </div>
+
+      <div class="media-section">
+        <p class="eyebrow">PHOTO DOCUMENTATION</p>
+        <h2>Build and configuration</h2>
+
+        <div class="media-grid">
+          <figure class="media-card">
+            <img
+              src="Assets/Images/sv06/printer-build.jpg"
+              alt="Sovol SV06 printer during systems integration"
+            />
+            <figcaption>SV06 hardware and printer setup.</figcaption>
+          </figure>
+
+          <figure class="media-card">
+            <img
+              src="Assets/Images/sv06/klipper-dashboard.png"
+              alt="Mainsail dashboard used to manage the SV06 printer"
+            />
+            <figcaption>Mainsail interface for printer control and monitoring.</figcaption>
+          </figure>
+
+          <figure class="media-card">
+            <img
+              src="Assets/Images/sv06/printed-part.jpg"
+              alt="A prototype part printed on the modified Sovol SV06"
+            />
+            <figcaption>Example prototype produced through the workflow.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="media-section">
+        <p class="eyebrow">VIDEO</p>
+        <h2>Printer operation</h2>
+
+        <video class="project-video" controls preload="metadata">
+          <source src="Assets/Videos/sv06/timelapse.mp4" type="video/mp4" />
+          Your browser does not support embedded video.
+        </video>
+
+        <p class="media-note">
+          Placeholder video path — add Assets/Videos/sv06/timelapse.mp4 to enable playback.
+        </p>
+      </div>
+
+      <div class="media-section">
+        <p class="eyebrow">TECHNICAL NOTES</p>
+        <h2>System components</h2>
+
+        <ul class="technical-list">
+          <li>Sovol SV06 FDM 3D printer</li>
+          <li>Raspberry Pi 400 as the Klipper host</li>
+          <li>Klipper firmware and printer configuration</li>
+          <li>Mainsail web interface and Moonraker API service</li>
+          <li>Custom tuning and configuration work, including StealthChop-related settings</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Kei Maeda. Built with HTML, CSS, and GitHub Pages.</p>
+  </footer>
+</body>
+</html>
