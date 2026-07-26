@@ -12,6 +12,23 @@
 </head>
 
 <body>
+  <script>
+    if (sessionStorage.getItem("introPlayed")) {
+      document.documentElement.classList.add("intro-skip");
+    } else {
+      sessionStorage.setItem("introPlayed", "1");
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+      window.scrollTo(0, 0);
+    }
+  </script>
+
+  <div class="intro-overlay" aria-hidden="true">
+    <p class="intro-mark">KM</p>
+    <p class="intro-tagline">ENGINEERING • RESEARCH</p>
+  </div>
+
   <header class="site-header">
     <a class="logo" href="#home">KM</a>
 
