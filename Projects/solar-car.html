@@ -57,6 +57,8 @@
           <p>
             I designed and built the entire electrical system, 
             communicating with manufacturers and professionals.
+            The electrical system is controlled by a 12V system
+            and the drive power comes from a 48V battery pack.
           </p>
         </div>
       </div>
@@ -68,27 +70,56 @@
         <div class="media-grid">
           <figure class="media-card">
             <img
-              src="Assets/Images/solar-car/car-build.jpg"
-              alt="Solar car chassis and electrical build"
+              src="Assets/Images/solar-car/battery.jpg"
+              alt="48V battery on the frame"
             />
-            <figcaption>Solar car during electrical build-out.</figcaption>
+            <figcaption>48V battery on the frame.</figcaption>
           </figure>
 
           <figure class="media-card">
             <img
-              src="Assets/Images/solar-car/array-wiring.jpg"
-              alt="Solar array wiring on the vehicle"
+              src="Assets/Images/solar-car/panellayout.jpg"
+              alt="Panel layout for the solar array"
             />
-            <figcaption>Solar array wiring and integration.</figcaption>
+            <figcaption>Panel layout for the solar array.</figcaption>
           </figure>
 
           <figure class="media-card">
             <img
-              src="Assets/Images/solar-car/test-run.jpg"
-              alt="Solar car during an outdoor test run"
+              src="Assets/Images/solar-car/dashboarddesign.jpg"
+              alt="Dashboard design for 12V control system"
             />
-            <figcaption>Outdoor test run of the vehicle.</figcaption>
+            <figcaption>Dashboard design for 12V control system.</figcaption>
           </figure>
+        </div>
+      </div>
+
+      <div class="media-section">
+        <p class="eyebrow">SCHEMATICS</p>
+        <h2>Electrical schematics</h2>
+
+        <div class="carousel">
+          <button class="carousel-btn carousel-prev" type="button" aria-label="Previous schematic">&#8249;</button>
+
+          <div class="carousel-track">
+            <figure class="carousel-slide">
+              <img
+                src="Assets/Images/solar-car/schematic-12v.jpg"
+                alt="12V electrical system schematic"
+              />
+              <figcaption>12V control system schematic.</figcaption>
+            </figure>
+
+            <figure class="carousel-slide">
+              <img
+                src="Assets/Images/solar-car/schematic-48v.jpg"
+                alt="48V electrical system schematic"
+              />
+              <figcaption>48V drive power schematic.</figcaption>
+            </figure>
+          </div>
+
+          <button class="carousel-btn carousel-next" type="button" aria-label="Next schematic">&#8250;</button>
         </div>
       </div>
 
@@ -97,12 +128,12 @@
         <h2>Test drive</h2>
 
         <video class="project-video" controls preload="metadata">
-          <source src="Assets/Videos/solar-car/test-drive.mp4" type="video/mp4" />
+          <source src="Assets/Videos/solar-car/blinkertest.mp4" type="video/mp4" />
           Your browser does not support embedded video.
         </video>
 
         <p class="media-note">
-          Placeholder video path — add Assets/Videos/solar-car/test-drive.mp4 to enable playback.
+          Turn signal and hazard testing
         </p>
       </div>
 
@@ -123,5 +154,7 @@
   <footer>
     <p>© 2026 Kei Maeda. Built with HTML, CSS, and GitHub Pages.</p>
   </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>
