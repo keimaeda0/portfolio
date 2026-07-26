@@ -5,9 +5,9 @@
   --text: #f5f7fa;
   --muted: #aab4c1;
   --line: #2a3440;
-  --accent: #58d68d;
+  --accent: #dc362a;
   --accent-dark: #1c9b5a;
-  --max-width: 1120px;
+  --max-width: 1720px;
 }
 
 * {
@@ -32,7 +32,7 @@ a {
 }
 
 .site-header {
-  width: min(var(--max-width), calc(100% - 40px));
+  width: min(var(--max-width), calc(100% - 16px));
   margin: 0 auto;
   min-height: 78px;
   display: flex;
@@ -65,7 +65,7 @@ nav a:hover {
 
 .hero,
 .section {
-  width: min(var(--max-width), calc(100% - 40px));
+  width: min(var(--max-width), calc(100% - 16px));
   margin: 0 auto;
 }
 
@@ -112,7 +112,7 @@ h3 {
 .hero-text {
   max-width: 700px;
   color: var(--muted);
-  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
   margin: 0;
 }
 
@@ -160,7 +160,7 @@ h3 {
 .about-text p,
 .contact-section > p:not(.eyebrow) {
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1.25rem;
 }
 
 .project-grid {
@@ -194,6 +194,7 @@ h3 {
 
 .project-card p {
   color: var(--muted);
+  font-size: 1.05rem;
   margin: 0;
 }
 
@@ -301,7 +302,7 @@ footer {
 }
 .project-hero,
 .project-content {
-  width: min(var(--max-width), calc(100% - 40px));
+  width: min(var(--max-width), calc(100% - 16px));
   margin: 0 auto;
 }
 
@@ -357,8 +358,12 @@ footer {
 }
 
 .project-intro p:not(.eyebrow),
-.media-note,
 .technical-list {
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+.media-note {
   color: var(--muted);
 }
 
