@@ -5,8 +5,8 @@
   --text: #f5f7fa;
   --muted: #aab4c1;
   --line: #2a3440;
-  --accent: #dc362a;
-  --accent-dark: #dc362a;
+  --accent: #349ceb;
+  --accent-dark: #349ceb;
   --max-width: 1720px;
 }
 
@@ -29,6 +29,70 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: var(--background);
+  animation: intro-hold 2.1s ease forwards;
+}
+
+.intro-mark {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transform: scale(0.85);
+  animation: intro-mark-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+.intro-tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  opacity: 0;
+  animation: intro-tagline-in 0.6s ease 0.6s forwards;
+}
+
+@keyframes intro-mark-in {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes intro-tagline-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes intro-hold {
+  0%,
+  70% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+html.intro-skip .intro-overlay {
+  display: none;
 }
 
 .site-header {
@@ -105,7 +169,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   margin-bottom: 14px;
 }
 
@@ -171,7 +235,7 @@ h3 {
 
 .project-card {
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 1.5px solid var(--line);
   min-height: 275px;
   padding: 28px;
   display: flex;
@@ -194,7 +258,7 @@ h3 {
 
 .project-card p {
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1.7rem;
   margin: 0;
 }
 
@@ -398,12 +462,134 @@ footer {
   padding: 14px;
 }
 
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.video-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  margin: 0;
+}
+
+.video-card .project-video {
+  width: 100%;
+  aspect-ratio: 1080 / 1920;
+  object-fit: cover;
+  margin-top: 0;
+  border: none;
+}
+
+.video-card figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 14px;
+}
+
+.media-feature {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  margin: 28px 0 0;
+}
+
+.media-feature img {
+  width: 100%;
+  max-height: 900px;
+  display: block;
+  object-fit: cover;
+}
+
+.media-feature figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 14px;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.carousel-track {
+  flex: 1;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  margin: 0;
+}
+
+.carousel-slide img {
+  width: 100%;
+  aspect-ratio: 2200 / 1700;
+  max-height: none;
+  display: block;
+  object-fit: contain;
+  background: #000;
+}
+
+.carousel-slide figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 14px;
+}
+
+.carousel-btn {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.carousel-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .carousel {
+    gap: 8px;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+}
+
 .project-video {
   width: min(900px, 100%);
   background: #000;
   border: 1px solid var(--line);
   display: block;
   margin-top: 28px;
+}
+
+.project-video-small {
+  width: min(420px, 100%);
 }
 
 .media-note {
@@ -417,7 +603,8 @@ footer {
 
 @media (max-width: 720px) {
   .project-intro,
-  .media-grid {
+  .media-grid,
+  .video-grid {
     grid-template-columns: 1fr;
   }
 
