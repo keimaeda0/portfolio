@@ -13,14 +13,27 @@
 
 <body>
   <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
     if (sessionStorage.getItem("introPlayed")) {
       document.documentElement.classList.add("intro-skip");
     } else {
       sessionStorage.setItem("introPlayed", "1");
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-      }
-      window.scrollTo(0, 0);
+      document.documentElement.classList.add("intro-lock");
+
+      const jumpToTop = () => window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      jumpToTop();
+      window.addEventListener("load", jumpToTop);
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const overlay = document.querySelector(".intro-overlay");
+        overlay.addEventListener("animationend", () => {
+          document.documentElement.classList.remove("intro-lock");
+          jumpToTop();
+        });
+      });
     }
   </script>
 
@@ -34,7 +47,6 @@
 
     <nav aria-label="Main navigation">
       <a href="#projects">Projects</a>
-      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -70,11 +82,6 @@
     Investigated lower-cost cathode materials and evaluated electrochemical
     performance through controlled cycling tests in a university lab setting.
   </p>
-  <div class="tags">
-    <span>Electrochemistry</span>
-    <span>Energy Storage</span>
-    <span>Research</span>
-  </div>
 </a>
 
         <a class="project-card project-link" href="Projects/solar-car.html">
@@ -84,11 +91,6 @@
     Helped start and organize a nonprofit-led solar car team at TAMS, developing 
     a golf-cart style solar car with a 48V electrical system.
   </p>
-  <div class="tags">
-    <span>Solar Energy</span>
-    <span>Systems Engineering</span>
-    <span>Team Project</span>
-  </div>
 </a>
 
         <a class="project-card project-link" href="Projects/sv06.html">
@@ -98,11 +100,6 @@
     Converted a Sovol SV06 from stock firmware into a Klipper-based
     prototyping system hosted on a Raspberry Pi 400.
   </p>
-  <div class="tags">
-    <span>Klipper</span>
-    <span>Raspberry Pi</span>
-    <span>Additive Manufacturing</span>
-  </div>
 </a>
 
         <!-- Hidden for now — page still exists at Projects/support-study.html, just unlinked from the grid.
@@ -128,33 +125,9 @@
     Built and programmed competition robots as part of the TAMSformers
     robotics team, working across mechanical design and controls.
   </p>
-  <div class="tags">
-    <span>Robotics</span>
-    <span>Controls</span>
-    <span>Team Project</span>
-  </div>
 </a>
     </section>
 
-    <section class="section about-section" id="about">
-      <div class="section-heading">
-        <p class="eyebrow">ABOUT</p>
-        <h2>I build, test, and document.</h2>
-      </div>
-
-      <div class="about-text">
-        <p>
-          I am a student at the Texas Academy of Mathematics and Science with
-          interests in electrical engineering, energy systems, robotics, and
-          manufacturing. I am most engaged by projects that produce measurable
-          results: hardware, experiments, data, prototypes, and lessons from failure.
-        </p>
-        <p>
-          This portfolio is a record of what I actually did—not a list of
-          buzzwords or inflated claims.
-        </p>
-      </div>
-    </section>
 
     <section class="section contact-section" id="contact">
       <p class="eyebrow">CONTACT</p>
@@ -165,12 +138,6 @@
 
       <div class="contact-links">
         <a href="mailto:keimaedatexas@gmail.com">Email</a>
-        <a href="https://github.com/keimaeda0" target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>
-        <a href="linkedin.com/in/kei-maeda-260aa633a" target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
       </div>
     </section>
   </main>
