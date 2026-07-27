@@ -7,7 +7,7 @@
   --line: #2a3440;
   --accent: #349ceb;
   --accent-dark: #349ceb;
-  --max-width: 1720px;
+  --max-width: 1200px;
 }
 
 * {
@@ -96,7 +96,7 @@ html.intro-skip .intro-overlay {
 }
 
 .site-header {
-  width: min(var(--max-width), calc(100% - 16px));
+  width: min(var(--max-width), calc(100% - 120px));
   margin: 0 auto;
   min-height: 78px;
   display: flex;
@@ -129,7 +129,7 @@ nav a:hover {
 
 .hero,
 .section {
-  width: min(var(--max-width), calc(100% - 16px));
+  width: min(var(--max-width), calc(100% - 120px));
   margin: 0 auto;
 }
 
@@ -258,7 +258,7 @@ h3 {
 
 .project-card p {
   color: var(--muted);
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   margin: 0;
 }
 
@@ -366,7 +366,7 @@ footer {
 }
 .project-hero,
 .project-content {
-  width: min(var(--max-width), calc(100% - 16px));
+  width: min(var(--max-width), calc(100% - 120px));
   margin: 0 auto;
 }
 
@@ -456,9 +456,12 @@ footer {
   object-fit: cover;
 }
 
+figcaption {
+  font-size: 1.15rem;
+}
+
 .media-card figcaption {
   color: var(--muted);
-  font-size: 0.9rem;
   padding: 14px;
 }
 
@@ -485,7 +488,6 @@ footer {
 
 .video-card figcaption {
   color: var(--muted);
-  font-size: 0.9rem;
   padding: 14px;
 }
 
@@ -504,7 +506,6 @@ footer {
 
 .media-feature figcaption {
   color: var(--muted);
-  font-size: 0.9rem;
   padding: 14px;
 }
 
@@ -513,6 +514,10 @@ footer {
   align-items: center;
   gap: 14px;
   margin-top: 28px;
+}
+
+.carousel-compact {
+  max-width: 700px;
 }
 
 .carousel-track {
@@ -547,7 +552,6 @@ footer {
 
 .carousel-slide figcaption {
   color: var(--muted);
-  font-size: 0.9rem;
   padding: 14px;
 }
 
