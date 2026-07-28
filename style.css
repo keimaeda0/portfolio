@@ -8,6 +8,7 @@
   --accent: #349ceb;
   --accent-dark: #349ceb;
   --max-width: 1200px;
+  --gutter: 120px;
 }
 
 * {
@@ -96,7 +97,7 @@ html.intro-skip .intro-overlay {
 }
 
 .site-header {
-  width: min(var(--max-width), calc(100% - 120px));
+  width: min(var(--max-width), calc(100% - var(--gutter)));
   margin: 0 auto;
   min-height: 78px;
   display: flex;
@@ -129,7 +130,7 @@ nav a:hover {
 
 .hero,
 .section {
-  width: min(var(--max-width), calc(100% - 120px));
+  width: min(var(--max-width), calc(100% - var(--gutter)));
   margin: 0 auto;
 }
 
@@ -319,7 +320,17 @@ footer {
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  :root {
+    --gutter: 64px;
+  }
+}
+
 @media (max-width: 720px) {
+  :root {
+    --gutter: 40px;
+  }
+
   .site-header {
     min-height: 68px;
   }
@@ -348,6 +359,17 @@ footer {
 
   .project-card {
     min-height: 245px;
+    padding: 22px;
+  }
+
+  .project-intro > div {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --gutter: 28px;
   }
 }
 .project-link {
@@ -366,7 +388,7 @@ footer {
 }
 .project-hero,
 .project-content {
-  width: min(var(--max-width), calc(100% - 120px));
+  width: min(var(--max-width), calc(100% - var(--gutter)));
   margin: 0 auto;
 }
 
